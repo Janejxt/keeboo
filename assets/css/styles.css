@@ -1,0 +1,244 @@
+﻿/*标签*/
+* {
+  font-family: "Arial", "Microsoft Yahei";
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: url(../imgs/bg.png) no-repeat 50% 50%;
+  background-size: 100% auto;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+input {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  line-height: normal;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+  /*background: transparent;*/
+
+}
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}/*伪元素改变input类型按钮的默认样式*/
+
+a {
+  background: transparent;/*背景透明*/
+  text-decoration: none;
+  color: #08c;
+}
+
+a:hover {
+  color: #006699;
+}
+
+small {
+  font-size: 80%;
+}
+
+h1 {
+  margin: 0;
+}
+
+.body-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /*background: rgba(0, 0, 0, 0.3);*/
+}
+
+.login-wrap {
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -200px;
+}
+
+.login-wrap .box {
+  background: rgb(246, 246, 246);
+  padding: 0;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.3);
+  z-index: 9;
+}
+.login-wrap .box:before {
+  z-index: 2;
+  bottom: -5px;
+  left: 5px;
+  right: 5px;
+  background: rgba(240, 240, 240, 0.6);
+}
+
+.login-wrap .box:after {
+  z-index: 1;
+  bottom: -10px;
+  left: 10px;
+  right: 10px;
+  margin-top: 5px;
+  background: rgba(237, 237, 237, 0.5);
+}
+
+.login-wrap .box:before, .login-wrap .box:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-radius: 0 0 2px 2px;
+}
+.login-wrap .box .box-header {
+  /*background: #0daee1;*/
+  background: #383F58;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.login-wrap .box .box-header h1 {
+  height: 40px;
+  margin: 0;
+  padding: 25px 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.login-wrap .box .box-body {
+  padding: 30px 50px;
+}
+
+.login-wrap .box .box-body .login-form {
+  margin-top: -10px;
+}
+
+.login-wrap .box .box-body .login-form .label-row {
+  margin-bottom: 15px;
+}
+
+.login-form .label-row {
+  position: relative;
+  padding: 24px 0 0;
+}
+
+.login-form .label-row .input-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  /*color: #999;*/
+  color: #383F58;
+}
+
+.login-form .label-row input {
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  padding: 8px 10px;
+  height: 20px;
+  width: 94%;
+  line-height: 32px;
+  font-size: 14px;
+  color: #333;
+  display: block;
+  box-shadow: inset 0 0 0 #fff;
+}
+
+.login-form .label-row input:focus {
+  border-color: #0daee1;
+}/*:focus 选择器用于选取获得焦点的元素。*/
+
+*::-webkit-input-placeholder {
+  color: #dedede;
+}
+
+*:-moz-placeholder {
+  color: #dedede;
+}
+
+*:-ms-input-placeholder {
+  /* IE10+ */
+  color: #dedede;
+}
+
+.form-text
+{
+  font-family: inherit;
+  margin: 0;
+  vertical-align: middle;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.form-text:focus{
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0 none;
+}
+
+
+
+.login-form .label-row .info-tip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 3px 10px;
+  border-radius: 3px;
+  background: rgba(241, 83, 83, 0.8);
+  color: #fff;
+}
+.login-form .label-row .info-tip::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent rgba(241, 83, 83, 0.8) transparent ;
+}
+
+.login-form .submit {
+  padding: 15px 0;
+}
+
+.login-form .submit .btn {
+  display: block;
+  padding: 8px 11px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: #5DD4C1;
+  border-radius: 3px;
+  -moz-transition: background 0.3s; /* Firefox 4 */
+  -webkit-transition: background 0.3s; /* Safari and Chrome */
+  -o-transition: background 0.3s; /* Opera */
+  transition: background 0.3s;/*u? div *?*?7?1?*/
+}
+
+.login-form .submit .btn:hover {/*hover a*/
+  background: #009d85 ;
+}
+
+
+
+
+

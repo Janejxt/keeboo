@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>跬步后台管理系统</title>
+    <link rel="stylesheet" href="assets/css/keeboo1.css">
+    <link rel="stylesheet" href="assets/api/bootstrap/css/bootstrap.min.css">
+
+    <script type="text/javascript" language="javascript" src="assets/api/jquery/jquery-2.0.3.min.js"></script>
+    <script src="assets/api/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        html, body, h1, h2,h3,p,a,input {
+            font-family: 微软雅黑, 黑体, 细黑, Segoe UI, Tahoma, Arial, Helvetica, Sans-Serif;
+        }
+
+        html,body {
+            margin: 0;
+            padding: 0;
+            background: #F3F3F3;
+            color: #939393;
+            line-height: normal;
+
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            list-style: none;
+        }
+        label {
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        @media (min-width: 1200px) {
+            .container {
+                width: 1240px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+<header id="header1">
+    <div id="header1-container">
+        <!--<div id="header1-content" >
+            <div id="header1-con-menu" class="header1">
+                <ul>
+                    <li name="content"  id="cont"><a class="active" href="index1.html" >内容管理</a></li>
+                    <li name="operate" id="oper"><a href="#">运营管理</a></li>
+                    <li name="system"  id="sys"><a href="#">系统设置</a></li>
+                </ul>
+            </div>
+            <div id="header1-con-right" class="header1">
+                <div class="header1-logge">
+                    <button id="exit-btn" class="logininfo">退出</button>
+                    <p id="loggeduser" class="logininfo">管理员</p>
+                    <input type="text" placeholder="请输入关键字" id="search-bar">
+                </div>
+            </div>
+        </div>-->
+        <div class="container" >
+            <div class="row ">
+                <div class="col-md-6 col-lg-3" id="header1-con-menu">
+                    <ul>
+                        <li name="content"  id="cont"><a class="active" href="index1.html" >内容管理</a></li>
+                        <li name="operate" id="oper"><a href="#">运营管理</a></li>
+                        <li name="system"  id="sys"><a href="#">系统设置</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-9 hidden-xs hidden-sm" id="header1-con-right">
+                    <div class="header1-logge">
+                        <button id="exit-btn" class="logininfo">退出</button>
+                        <p id="loggeduser" class="logininfo">管理员</p>
+                        <input type="text" placeholder="请输入关键字" id="search-bar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="contentpage">
+    <!-- Sidenav -->
+    <nav id="sidenav">
+        <p class="menu-head">线路设计</p>
+        <ul class="menu-body">
+            <li name="recommend" ><a class="active" href="#">推荐&nbsp;&nbsp;&nbsp;</a></li>
+            <li name="hotpoint"><a   href="#">热点&nbsp;&nbsp;&nbsp;</a></li>
+            <li name="travel"><a   href="#">旅行&nbsp;&nbsp;&nbsp;</a></li>
+            <li name="travel"><a   href="#">马拉松</a></li>
+            <li name="travel"><a   href="#">公益&nbsp;&nbsp;&nbsp;</a></li>
+            <li name="travel"><a   href="#">江湖&nbsp;&nbsp;&nbsp;</a></li>
+        </ul>
+        <p class="menu-head1">线路审核</p>
+        <ul class="menu-body">
+            <li name="check" ><a  href="routeCheck.html" style="padding-right: 54%">线路审核</a></li>
+        </ul>
+    </nav>
+    <!-- !PAGE CONTENT! -->
+    <div class="content-main" id="content-main">
+        <!-- First Photo Grid-->
+        <!--<div class="content-row-padding">
+
+            <div class="content-card-container">
+                <div class="top_part">
+                    <div class="card_top">
+                        <div class="card_title"><p>台北吃货，你好</p></div>
+
+                    </div>
+                    <div class="card_top_tag">
+                        <div></div>
+                        <label class="time_date">2014/13/14</label>
+                    </div>
+                    <div class="img-shadow">
+                        <img src="assets/imgs/img_mountains.jpg" alt="Norway" >
+                    </div>
+                    <div class="content-card-text">
+                        <div class="middle_recom">
+                            <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                        </div>
+
+                        <div class="total-length">
+                            <img src="assets/imgs/map.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678米</label>
+                        </div>
+                        <div class="total-step">
+                            <img src="assets/imgs/step.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678步</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_bottom" >
+
+                    <label class="card_bottom_la">！</label>
+                    <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                </div>
+
+                &lt;!&ndash;mid_recom的提示框&ndash;&gt;
+                <div class="mid_recom_show">
+                    <p></p>
+                </div>
+            </div>
+            <div class="content-card-container">
+                <div class="top_part">
+                    <div class="card_top">
+                        <div class="card_title"><p>台北吃货，你好</p></div>
+
+                    </div>
+                    <div class="card_top_tag">
+                        <div></div>
+                        <label class="time_date">2014/13/14</label>
+                    </div>
+                    <div class="img-shadow">
+                        <img src="assets/imgs/img_mountains.jpg" alt="Norway" >
+                    </div>
+                    <div class="content-card-text">
+                        <div class="middle_recom">
+                            <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                        </div>
+
+                        <div class="total-length">
+                            <img src="assets/imgs/map.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678米</label>
+                        </div>
+                        <div class="total-step">
+                            <img src="assets/imgs/step.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678步</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_bottom" >
+
+                    <label class="card_bottom_la">！</label>
+                    <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                </div>
+
+                &lt;!&ndash;mid_recom的提示框&ndash;&gt;
+                <div class="mid_recom_show">
+                    <p></p>
+                </div>
+            </div>
+            <div class="content-card-container">
+                <div class="top_part">
+                    <div class="card_top">
+                        <div class="card_title"><p>台北吃货，你好</p></div>
+
+                    </div>
+                    <div class="card_top_tag">
+                        <div></div>
+                        <label class="time_date">2014/13/14</label>
+                    </div>
+                    <div class="img-shadow">
+                        <img src="assets/imgs/img_mountains.jpg" alt="Norway" >
+                    </div>
+                    <div class="content-card-text">
+                        <div class="middle_recom">
+                            <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                        </div>
+
+                        <div class="total-length">
+                            <img src="assets/imgs/map.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678米</label>
+                        </div>
+                        <div class="total-step">
+                            <img src="assets/imgs/step.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678步</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_bottom" >
+
+                    <label class="card_bottom_la">！</label>
+                    <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                </div>
+
+                &lt;!&ndash;mid_recom的提示框&ndash;&gt;
+                <div class="mid_recom_show">
+                    <p></p>
+                </div>
+            </div>
+            <div class="content-card-container">
+                <div class="top_part">
+                    <div class="card_top">
+                        <div class="card_title"><p>台北吃货，你好</p></div>
+
+                    </div>
+                    <div class="card_top_tag">
+                        <div></div>
+                        <label class="time_date">2014/13/14</label>
+                    </div>
+                    <div class="img-shadow">
+                        <img src="assets/imgs/img_mountains.jpg" alt="Norway" >
+                    </div>
+                    <div class="content-card-text">
+                        <div class="middle_recom">
+                            <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                        </div>
+
+                        <div class="total-length">
+                            <img src="assets/imgs/map.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678米</label>
+                        </div>
+                        <div class="total-step">
+                            <img src="assets/imgs/step.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678步</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_bottom" >
+
+                    <label class="card_bottom_la">！</label>
+                    <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                </div>
+
+                &lt;!&ndash;mid_recom的提示框&ndash;&gt;
+                <div class="mid_recom_show">
+                    <p></p>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Second Photo Grid-->
+        <!--<div class="content-row-padding">
+            <div class="content-card-container">
+                <div class="top_part">
+                    <div class="card_top">
+                        <div class="card_title"><p>台北吃货，你好</p></div>
+
+                    </div>
+                    <div class="card_top_tag">
+                        <div></div>
+                        <label class="time_date">2014/13/14</label>
+                    </div>
+                    <div class="img-shadow">
+                        <img src="assets/imgs/img_mountains.jpg" alt="Norway" >
+                    </div>
+                    <div class="content-card-text">
+                        <div class="middle_recom">
+                            <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                        </div>
+
+                        <div class="total-length">
+                            <img src="assets/imgs/map.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678米</label>
+                        </div>
+                        <div class="total-step">
+                            <img src="assets/imgs/step.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678步</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_bottom" >
+
+                    <label class="card_bottom_la">！</label>
+                    <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                </div>
+
+                &lt;!&ndash;mid_recom的提示框&ndash;&gt;
+                <div class="mid_recom_show">
+                    <p></p>
+                </div>
+            </div>
+            <div class="content-card-container">
+                <div class="top_part">
+                    <div class="card_top">
+                        <div class="card_title"><p>台北吃货，你好</p></div>
+
+                    </div>
+                    <div class="card_top_tag">
+                        <div></div>
+                        <label class="time_date">2014/13/14</label>
+                    </div>
+                    <div class="img-shadow">
+                        <img src="assets/imgs/img_mountains.jpg" alt="Norway" >
+                    </div>
+                    <div class="content-card-text">
+                        <div class="middle_recom">
+                            <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                        </div>
+
+                        <div class="total-length">
+                            <img src="assets/imgs/map.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678米</label>
+                        </div>
+                        <div class="total-step">
+                            <img src="assets/imgs/step.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678步</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_bottom" >
+
+                    <label class="card_bottom_la">！</label>
+                    <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                </div>
+
+                &lt;!&ndash;mid_recom的提示框&ndash;&gt;
+                <div class="mid_recom_show">
+                    <p></p>
+                </div>
+            </div>
+            <div class="content-card-container">
+                <div class="top_part">
+                    <div class="card_top">
+                        <div class="card_title"><p>台北吃货，你好</p></div>
+
+                    </div>
+                    <div class="card_top_tag">
+                        <div></div>
+                        <label class="time_date">2014/13/14</label>
+                    </div>
+                    <div class="img-shadow">
+                        <img src="assets/imgs/img_mountains.jpg" alt="Norway" >
+                    </div>
+                    <div class="content-card-text">
+                        <div class="middle_recom">
+                            <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                        </div>
+
+                        <div class="total-length">
+                            <img src="assets/imgs/map.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678米</label>
+                        </div>
+                        <div class="total-step">
+                            <img src="assets/imgs/step.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678步</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_bottom" >
+
+                    <label class="card_bottom_la">！</label>
+                    <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                </div>
+
+                &lt;!&ndash;mid_recom的提示框&ndash;&gt;
+                <div class="mid_recom_show">
+                    <p></p>
+                </div>
+            </div>
+            <div class="content-card-container">
+                <div class="top_part">
+                    <div class="card_top">
+                        <div class="card_title"><p>台北吃货，你好</p></div>
+
+                    </div>
+                    <div class="card_top_tag">
+                        <div></div>
+                        <label class="time_date">2014/13/14</label>
+                    </div>
+                    <div class="img-shadow">
+                        <img src="assets/imgs/img_mountains.jpg" alt="Norway" >
+                    </div>
+                    <div class="content-card-text">
+                        <div class="middle_recom">
+                            <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                        </div>
+
+                        <div class="total-length">
+                            <img src="assets/imgs/map.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678米</label>
+                        </div>
+                        <div class="total-step">
+                            <img src="assets/imgs/step.png" class="map-step">
+                            <div class="stars">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                                <img src="assets/imgs/red-star.png">
+                            </div>
+                            <label class="length-step">125678步</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_bottom" >
+
+                    <label class="card_bottom_la">！</label>
+                    <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                </div>
+
+                &lt;!&ndash;mid_recom的提示框&ndash;&gt;
+                <div class="mid_recom_show">
+                    <p></p>
+                </div>
+            </div>
+        </div>-->
+        <div class="container" style="padding-left: 10px">
+            <div class="row content-row-padding" style="margin-left: 10px">
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 content-card-container" style="padding: 0" >
+                    <div class="top_part">
+                        <div class="card_top">
+                            <div class="card_title"><p>台北吃货，你好</p></div>
+
+                        </div>
+                        <div class="card_top_tag">
+                            <div></div>
+                            <label class="time_date">2014/13/14</label>
+                        </div>
+                        <div class="img-shadow">
+                            <img class="img_pic" src="assets/imgs/img_mountains.jpg" alt="Norway">
+                        </div>
+                        <div class="content-card-text">
+                            <div class="middle_recom">
+                                <p><img src="assets/imgs/pencil.png">行走在江南水墨画中，湖景与花海辉映的“国内最美马拉松赛道</p>
+                            </div>
+
+                            <div class="total-length">
+                                <img src="assets/imgs/map.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678米</label>
+                            </div>
+                            <div class="total-step">
+                                <img src="assets/imgs/step.png" class="map-step">
+                                <div class="stars">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                    <img src="assets/imgs/red-star.png">
+                                </div>
+                                <label class="length-step">125678步</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_bottom" >
+
+                        <label class="card_bottom_la">！</label>
+                        <div style="position: relative;top: 3px;padding: 9.5px 10px"><a  href="viewDetail.html">查看详情</a></div>
+
+                    </div>
+                    <div class="data_list">
+                        <ul >
+                            <li><img src="assets/imgs/drop_reco.png">普通推荐</li>
+                            <li><img src="assets/imgs/drop_set_top.png">&nbsp;&nbsp;&nbsp;置顶</li>
+                            <li><img src="assets/imgs/drop_star.png">设为明星</li>
+                            <li><img src="assets/imgs/drop_check.png">留言审核</li>
+                        </ul>
+                    </div>
+                    <!--mid_recom的提示框-->
+                    <div class="mid_recom_show">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="bottom_pag">
+            <ul class="pagination1">
+                <li class="pre_page pa"><</li>
+                <li><input value="1"></li>
+                <li class="_slash">/</li>
+                <li class="total_num">7</li>
+                <li class="next_page pa">></li>
+            </ul>
+        </div>
+
+        <!--备审条-->
+        <div class="bottom_bar">
+            <span>跬步后台管理系统2016-2020</span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>苏ICP备16004758号</span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>Copyright&nbsp;@&nbsp;2016无锡千跬万步网络科技有限公司.保留所有权利</span>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    $(document).ready(function(){
+        /*导航条*/
+        $("#header1-con-menu li").click(function(){
+            var CLASS = $(this).children().attr("class");
+            if(CLASS == "active"){
+
+            }else{
+                $(this).children().addClass("active");
+                $(this).siblings("li").children().removeClass("active");
+            }
+        });
+        /*sidebar*/
+        var DISPY="none";
+        $("#sidenav p.menu-head").click(function(){
+            var VAL="6px solid #5DD4C1";
+            var URL1="url(assets/imgs/design-down.png)";
+            var DISPY1=$(this).next().css("display");
+            if(DISPY!=DISPY1){
+                URL1="url(assets/imgs/design-left.png)";
+                VAL=0;
+            }
+            $(this).css({backgroundImage:URL1,borderLeft:VAL}).next("ul.menu-body").slideToggle(200);
+            $(this).siblings("p.menu-head1").next("ul.menu-body").slideUp("slow");
+            $(this).siblings("p.menu-head1").css({borderLeft:0,backgroundImage:"url(assets/imgs/check-left.png)"});
+
+        });
+
+        /*sidebar*/
+        $("#sidenav p.menu-head1").click(function(){
+
+            var VAL="6px solid #5DD4C1";
+            var URL1="url(assets/imgs/check-down.png)";
+            var DISPY1=$(this).next().css("display");
+            if(DISPY!=DISPY1){
+                URL1="url(assets/imgs/check-left.png)";
+                VAL=0;
+            }
+            $(this).css({backgroundImage:URL1,borderLeft:VAL}).next("ul.menu-body").slideToggle(200);
+            $(this).siblings("p.menu-head").next("ul.menu-body").slideUp("slow");
+            $(this).siblings("p.menu-head").css({borderLeft:0,backgroundImage:"url(assets/imgs/design-left.png)"});
+
+
+
+        });
+        $("#sidenav li").click(function(){
+            var CLASS = $(this).children().attr("class");
+            if(CLASS == "active"){
+
+            }else{
+                $(this).children().addClass("active");
+                $(this).siblings("li").children().removeClass("active");
+            }
+        });
+
+
+        /*标题操作*/
+        $(".middle_recom p").mouseover(function(){
+            var mid_recom_show = $($(this).parent().parent().parent().siblings()[2]);
+            mid_recom_show.css("font-size","9px");
+            var p_value = $(this).text();
+            mid_recom_show.html(p_value);
+            mid_recom_show.show();
+        });
+        $(".middle_recom p").mouseout(function(){
+            $($(this).parent().parent().parent().siblings()[2]).hide();
+
+        });
+
+    });
+
+
+
+
+</script>
+
+</body>
+</html>

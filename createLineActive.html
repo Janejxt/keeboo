@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>跬步后台管理系统</title>
+    <link rel="stylesheet" href="assets/css/keeboo1.css">
+    <link rel="stylesheet" href="assets/api/bootstrap/css/bootstrap.min.css">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/imgs/favicon.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/imgs/favicon.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <script type="text/javascript" language="javascript" src="assets/api/jquery/jquery-2.0.3.min.js"></script>
+    <script src="assets/api/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        html, body, h1, h2,h3,p,a,input {
+            font-family: 微软雅黑, 黑体, 细黑, Segoe UI, Tahoma, Arial, Helvetica, Sans-Serif;
+        }
+
+        html,body {
+            margin: 0;
+            padding: 0;
+            background: #F3F3F3;
+            color: #939393;
+            line-height: normal;
+
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            list-style: none;
+        }
+        label {
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        div.modal-header::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        @media (min-width: 1200px) {
+            .container {
+                width: 1240px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<header id="header1">
+    <div id="header1-container">
+        <!--<div id="header1-content" >
+            <div id="header1-con-menu" class="header1">
+                <ul>
+                    <li name="content"  id="cont"><a class="active" href="index1.html" >内容管理</a></li>
+                    <li name="operate" id="oper"><a href="#">运营管理</a></li>
+                    <li name="system"  id="sys"><a href="#">系统设置</a></li>
+                </ul>
+            </div>
+            <div id="header1-con-right" class="header1">
+                <div class="header1-logge">
+                    <button id="exit-btn" class="logininfo">退出</button>
+                    <p id="loggeduser" class="logininfo">管理员</p>
+                    <input type="text" placeholder="请输入关键字" id="search-bar">
+                </div>
+            </div>
+        </div>-->
+        <div class="container" >
+            <div class="row ">
+                <div class="col-md-6 col-lg-3" id="header1-con-menu">
+                    <ul>
+                        <li name="content"  id="cont"><a class="active" href="index1.html" >内容管理</a></li>
+                        <li name="operate" id="oper"><a href="#">运营管理</a></li>
+                        <li name="system"  id="sys"><a href="#">系统设置</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-9 hidden-xs hidden-sm" id="header1-con-right">
+                    <div class="header1-logge">
+                        <button id="exit-btn" class="logininfo">退出</button>
+                        <p id="loggeduser" class="logininfo">管理员</p>
+                        <input type="text" placeholder="请输入关键字" id="search-bar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="contentpage">
+    <!-- Sidenav -->
+    <nav id="sidenav">
+        <p class="menu-head">线路设计</p>
+        <ul class="menu-body">
+            <li name="recommend" ><a  class="active"  href="#">推荐</a></li>
+            <li name="hotpoint"><a   href="#">热点</a></li>
+            <li name="travel"><a   href="#">旅行</a></li>
+            <li name="travel"><a   href="#">马拉松</a></li>
+            <li name="travel"><a   href="#">公益</a></li>
+            <li name="travel"><a   href="#">江湖</a></li>
+        </ul>
+        <p class="menu-head1">线路审核</p>
+        <ul class="menu-body">
+            <li name="check" ><a  href="routeCheck.html" style="padding-right: 54%">线路审核</a></li>
+        </ul>
+    </nav>
+    <!-- !PAGE CONTENT! -->
+    <div class="content-main" id="content-main">
+        <div class="content_main_route">
+            <div id="label_list">
+                <label><a href="index1.html">热点</a></label>
+                <label> > </label>
+                <label class="green_lab">编辑线路、兴趣点</label>
+            </div>
+            <div id="map_panel">
+                <img src="assets/imgs/img_mountains.jpg">
+            </div>
+            <div id="set_route_act" >
+                <div class="end_button" style="margin: 40px 0 30% 40px">
+
+                    <button class="save_route">保存</button>
+                    <button class="quit">取消</button>
+                    <button class="btn btn-primary btn-lg" data-toggle="modal"
+                            data-target="#myModal">
+                        兴趣点模态框
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--备审条-->
+        <div class="bottom_bar">
+            <span>跬步后台管理系统2016-2020</span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>苏ICP备16004758号</span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>Copyright&nbsp;@&nbsp;2016无锡千跬万步网络科技有限公司.保留所有权利</span>
+        </div>
+    </div>
+
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="padding-bottom: 0;border-bottom: 0">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true" style="font-size: 40px; font-weight: 300; margin-top: -15px">
+                    &times;
+                </button>
+            </div>
+            <form name="crt_act">
+                <div class="modal-body">
+
+                    <div class="modal_top">
+                        <span>名称</span>
+                        <input type="text">
+                    </div>
+                    <div class="modal_mid">
+                        <span>LOGO</span>
+                        <img src="assets/imgs/img_mountains.jpg">
+                        <button>选择文件</button>
+                    </div>
+                    <div class="modal_describe">
+                        <span>描述</span>
+                        <textarea cols="60" rows="9"></textarea>
+                    </div>
+
+                    <div class="modal_pic">
+                        <span>上传照片</span>
+                        <img class="modal_img" src="assets/imgs/img_mountains.jpg">
+                        <img class="modal_img" src="assets/imgs/img_mountains.jpg">
+                        <img class="modal_img" src="assets/imgs/img_mountains.jpg">
+                        <div id="modal_pic_icon"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer" style="border-top: 0;margin-bottom: 15%; padding-right: 40px">
+                    <button type="button" class="modal_btn btn_prew" >
+                        预览
+                    </button>
+                    <button type="button" class="modal_btn btn_close"
+                            data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="modal_btn btn_save">
+                        保存
+                    </button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script>
+    $(document).ready(function(){
+        /*导航条*/
+        $("#header1-con-menu li").click(function(){
+            var CLASS = $(this).children().attr("class");
+            if(CLASS == "active"){
+
+            }else{
+                $(this).children().addClass("active");
+                $(this).siblings("li").children().removeClass("active");
+            }
+        });
+        /*sidebar*/
+        var DISPY="none";
+        $("#sidenav p.menu-head").click(function(){
+            var VAL="6px solid #5DD4C1";
+            var URL1="url(assets/imgs/design-down.png)";
+            var DISPY1=$(this).next().css("display");
+            if(DISPY!=DISPY1){
+                URL1="url(assets/imgs/design-left.png)";
+                VAL=0;
+            }
+            $(this).css({backgroundImage:URL1,borderLeft:VAL}).next("ul.menu-body").slideToggle(200);
+            $(this).siblings("p.menu-head1").next("ul.menu-body").slideUp("slow");
+            $(this).siblings("p.menu-head1").css({borderLeft:0,backgroundImage:"url(assets/imgs/check-left.png)"});
+
+        });
+
+        /*sidebar*/
+        $("#sidenav p.menu-head1").click(function(){
+
+            var VAL="6px solid #5DD4C1";
+            var URL1="url(assets/imgs/check-down.png)";
+            var DISPY1=$(this).next().css("display");
+            if(DISPY!=DISPY1){
+                URL1="url(assets/imgs/check-left.png)";
+                VAL=0;
+            }
+            $(this).css({backgroundImage:URL1,borderLeft:VAL}).next("ul.menu-body").slideToggle(200);
+            $(this).siblings("p.menu-head").next("ul.menu-body").slideUp("slow");
+            $(this).siblings("p.menu-head").css({borderLeft:0,backgroundImage:"url(assets/imgs/design-left.png)"});
+
+
+
+        });
+        $("#sidenav li").click(function(){
+            var CLASS = $(this).children().attr("class");
+            if(CLASS == "active"){
+
+            }else{
+                $(this).children().addClass("active");
+                $(this).siblings("li").children().removeClass("active");
+            }
+        });
+    });
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<script src="assets/api/jquery/jquery-2.0.3.min.js"></script>
+	<script src="assets/api/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="body-wrap">
+		<div class="login-wrap">
+			<div class="box">
+				<div class="box-header">
+					<h1>跬步后台管理系统</h1>
+				</div>
+				<div class="box-body">
+					<form class="login-form">
+						<div class="label-row" id="name_div">
+							<input class="form-text" type="text" id="loginname" placeholder="请输入用户名" onfocus="ChangeBg(1)" onblur="ChangeBg(2)">
+							<span class="input-label">用户名</span>
+							<small class="info-tip" id="name_errtips" style="display:none"></small>
+						</div>
+						<div class="label-row" id="pass_div">
+							<input class="form-text" type="password"  id="password" placeholder="请输入用户密码" onfocus="ChangeBg(1)" onblur="ChangeBg(2)">
+							<span class="input-label">用户密码</span>
+							<small class="info-tip" id="pass_errtips" style="display:none"></small>
+						</div>
+						<div class="submit">
+							<a class="btn" href="#"  id="login_button">登录系统</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	 <!--javascript -->
+		<script type="text/javascript">
+			function ChangeBg(type)
+			{
+				if(type==1)
+				{
+					$(".body-wrap").css("background","rgba(0, 0, 0, 0.4)");
+				}
+				else
+				{
+					$(".body-wrap").css("background","");
+				}
+			}
+			$(function() {
+				$('#login_button').click(function() {
+					$.loginmethod.login();
+				});
+				$(document).keydown(function(event) {//document表示整个页面，为 "keydown" 事件绑定一个处理函数，或者触发元素上的 "keydown" 事件。
+					if (event.keyCode == 13) {//回车的keycode是13
+						$("#login_button").click();
+					}
+				});
+			});
+			$(function(){
+				$("#loginname").click(function(){
+					$("#name_errtips").hide();
+					$("#pass_errtips").hide();
+					//$(".body-wrap").css("background","rgba(0, 0, 0, 0.4)");
+				});
+				$("#password").click(function(){
+					$("#name_errtips").hide();
+					$("#pass_errtips").hide();
+				});
+
+
+			})
+		</script>
+</body>
+</html>
